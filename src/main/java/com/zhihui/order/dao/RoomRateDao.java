@@ -30,11 +30,11 @@ public class RoomRateDao extends DaoBase {
 	}
 
 	public RoomRateModel getByRoomTypeIdEndOfDay(int partnerId, int chainId, int roomTypeId, Date endDfDay) {
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String sql = this.selectText + " where partnerId = " + partnerId //
 				+ " and chainId = " + chainId //
 				+ " and roomTypeId = " + roomTypeId //
-				+ " and endOfDay = '" + df.format(endDfDay) + "'";
+				+ " and endOfDay = '" + sdf.format(endDfDay) + "'";
 		List<RoomRateModel> tmp = this.executeFind(sql, RoomRateModel.class);
 		if (tmp == null || tmp.size() <= 0)
 			return null;
