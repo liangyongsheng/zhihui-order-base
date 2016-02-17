@@ -2,6 +2,7 @@ package com.zhihui.order.bo;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,5 +41,9 @@ public class OrderBo extends BoBase {
 			orderModel.setLastReviseTime(new Timestamp((new Date()).getTime()));
 		this.orderDao.update(orderModel);
 		return orderModel;
+	}
+
+	public List<OrderModel> getByMebId(long mebId) {
+		return this.orderDao.getByMebId(mebId);
 	}
 }

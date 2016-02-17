@@ -2,6 +2,7 @@ package com.zhihui.order.bo;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,5 +34,9 @@ public class OrderGuestBo extends BoBase {
 			orderGuestModel.setLastReviseOprtId(orderGuestModel.getCreateOprtId());
 		this.orderGuestDao.add(orderGuestModel);
 		return orderGuestModel;
+	}
+
+	public List<OrderGuestModel> getByOrderId(long orderId) {
+		return this.orderGuestDao.getByOrderId(orderId);
 	}
 }

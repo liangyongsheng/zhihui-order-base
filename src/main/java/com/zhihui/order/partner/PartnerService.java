@@ -13,7 +13,31 @@ import com.zhihui.order.model.RoomTypeModel;
 
 @Service
 public abstract class PartnerService {
+	protected Throwable throwable;
+
+	public Throwable getThrowable() {
+		return this.throwable;
+	}
+
+	/**
+	 * when (len <= 0) is original string
+	 * 
+	 * @param len
+	 * @return
+	 */
+	public String getErrMsg(int len) {
+		String rs = null;
+		if (this.throwable == null)
+			return rs;
+		rs = this.throwable.getMessage();
+		if (rs != null && len > 0 && rs.length() > len)
+			rs = rs.substring(0, len);
+		return rs;
+	}
+
 	public abstract String getDesc();
 
 	public abstract String addBook(ChainModel chainModel, RoomTypeModel roomTypeModel, OrderModel orderModel, List<OrderGuestModel> orderGuestModels, List<OrderPriceModel> orderPriceModels) throws PartnerServiceException;
+
+	public abstract void cancelBook(OrderModel orderModel) throws PartnerServiceException;
 }
