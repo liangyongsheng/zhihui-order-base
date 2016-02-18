@@ -11,7 +11,7 @@ import com.zhihui.order.model.OrderGuestModel;
 @Repository
 public class OrderGuestDao extends DaoBase {
 	private String selectText = " select "//
-			+ "orderGuestId,orderId,contactName,contactMobile, "//
+			+ "orderGuestId,orderId,contactName,contactGender,contactMobile, "//
 			+ "createTime,createOprtId,lastReviseTime,lastReviseOprtId,remark "//
 			+ "from order_guest ";
 

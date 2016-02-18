@@ -28,11 +28,19 @@ public class OrderGuestBo extends BoBase {
 	}
 
 	public OrderGuestModel add(OrderGuestModel orderGuestModel) {
+		if (orderGuestModel.getContactGender() == null)
+			orderGuestModel.setContactGender(1);
 		if (orderGuestModel.getLastReviseTime() == null)
 			orderGuestModel.setLastReviseTime(new Timestamp((new Date()).getTime()));
 		if (orderGuestModel.getLastReviseOprtId() == null)
 			orderGuestModel.setLastReviseOprtId(orderGuestModel.getCreateOprtId());
 		this.orderGuestDao.add(orderGuestModel);
+		return orderGuestModel;
+	}
+
+	public OrderGuestModel update(OrderGuestModel orderGuestModel) {
+		orderGuestModel.setLastReviseTime(new Timestamp((new Date()).getTime()));
+		this.orderGuestDao.update(orderGuestModel);
 		return orderGuestModel;
 	}
 

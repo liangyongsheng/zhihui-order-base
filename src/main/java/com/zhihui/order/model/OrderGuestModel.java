@@ -19,6 +19,7 @@ public class OrderGuestModel {
 	private long orderGuestId;
 	private long orderId;
 	private String contactName;
+	private Integer contactGender;
 	private String contactMobile;
 	private Timestamp createTime;
 	private Integer createOprtId;
@@ -48,6 +49,14 @@ public class OrderGuestModel {
 
 	public void setContactName(String contactName) {
 		this.contactName = contactName;
+	}
+
+	public Integer getContactGender() {
+		return contactGender;
+	}
+
+	public void setContactGender(Integer contactGender) {
+		this.contactGender = contactGender;
 	}
 
 	public String getContactMobile() {

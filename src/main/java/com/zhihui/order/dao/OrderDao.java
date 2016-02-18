@@ -11,7 +11,8 @@ import com.zhihui.order.model.OrderModel;
 @Repository
 public class OrderDao extends DaoBase {
 	private String selectText = "select "//
-			+ "orderId,partnerId,outerOrderSn,outerOrderName,chainId,roomTypeId,mebId,num,arrEndOfDay, "//
+			+ "orderId,partnerId,outerOrderSn,outerOrderName,chainId,roomTypeId,mebId,mebName,mebGender,mebMobile, "//
+			+ "num,arrEndOfDay, "//
 			+ "depEndOfDay,reserveTime,earlyArrTime,lastArrTime,channelSellerId,sellerId, "//
 			+ "message,flag,createTime,createOprtId,lastReviseTime,lastReviseOprtId, "//
 			+ "innRemark,remark "//

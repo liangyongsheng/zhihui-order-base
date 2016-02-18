@@ -23,6 +23,9 @@ public class OrderModel {
 	private String outerOrderName;
 	private int chainId;
 	private long mebId;
+	private String mebName;
+	private Integer mebGender;
+	private String mebMobile;
 	private int roomTypeId;
 	private Integer num;
 	private Date arrEndOfDay;
@@ -87,6 +90,30 @@ public class OrderModel {
 
 	public void setMebId(long mebId) {
 		this.mebId = mebId;
+	}
+
+	public String getMebName() {
+		return mebName;
+	}
+
+	public void setMebName(String mebName) {
+		this.mebName = mebName;
+	}
+
+	public Integer getMebGender() {
+		return mebGender;
+	}
+
+	public void setMebGender(Integer mebGender) {
+		this.mebGender = mebGender;
+	}
+
+	public String getMebMobile() {
+		return mebMobile;
+	}
+
+	public void setMebMobile(String mebMobile) {
+		this.mebMobile = mebMobile;
 	}
 
 	public int getRoomTypeId() {

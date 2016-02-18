@@ -28,6 +28,8 @@ public class OrderBo extends BoBase {
 	}
 
 	public OrderModel add(OrderModel orderModel) {
+		if (orderModel.getMebGender() == null)
+			orderModel.setMebGender(1);
 		if (orderModel.getLastReviseTime() == null)
 			orderModel.setLastReviseTime(new Timestamp((new Date()).getTime()));
 		if (orderModel.getLastReviseOprtId() == null)
@@ -37,8 +39,7 @@ public class OrderBo extends BoBase {
 	}
 
 	public OrderModel update(OrderModel orderModel) {
-		if (orderModel.getLastReviseTime() == null)
-			orderModel.setLastReviseTime(new Timestamp((new Date()).getTime()));
+		orderModel.setLastReviseTime(new Timestamp((new Date()).getTime()));
 		this.orderDao.update(orderModel);
 		return orderModel;
 	}
